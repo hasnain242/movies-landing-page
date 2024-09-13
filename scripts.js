@@ -49,12 +49,18 @@ function displayMovies(movies) {
         movieDiv.innerHTML = `
             <img src="${posterUrl}" alt="${movie.title}">
             <h3>${movie.title}</h3>
-            <button class="like-btn" onclick="likeMovie('${movie.id}', '${movie.poster_path}', '${movie.title}')">Like</button>
+            <button class="like-btn" id = "44" onclick="likeMovie('${movie.id}', '${movie.poster_path}', '${movie.title}')">Like</button>
             `;
-
+        //    movieDiv.addEventListener('click',e=>{
+        //     if(e.target.tagName === 'BUTTON'){
+        //         e.className = 'active';
+        //     }
+        //    })
         moviesContainer.appendChild(movieDiv);
     });
+    
 }
+
 
 // Handle Like Button Click
 function likeMovie(id, poster_path, title) {
@@ -62,7 +68,6 @@ function likeMovie(id, poster_path, title) {
     if (!likedMovies.find(movie => movie.id === id)) {
         likedMovies.push({ id, poster_path, title });
         localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
-        alert('Movie liked!');
 
         displayLikedMovies(); // Update liked movies section
     } else {

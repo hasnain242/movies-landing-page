@@ -46,15 +46,15 @@ h2{
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
-    width: 100%;
+    width: 80%;
 }
 
 .like-btn:hover {
     background-color: #e63b36;
 }
-.likesbtn.active{
-    background-color: blue;
-}
+.like-btn:active{
+    width: 100%;
+  }
 input{
     background-color: #808080;
     padding: 10px;
