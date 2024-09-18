@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    margin: 8px;
+}
+body{
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+img{
+width: 315px;
+}
+h1{
+    font-size: 45px;
+}
+p{
+    text-align: justify;
+    line-height: 1.5;
+}
+span{
+    margin-left: 40px;
+    width: 550px;
+}
+#movie-detail-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+    align-items: center;
+}
+@media only screen and (max-width: 500px) {
+    #movie-detail-container{
+        display: block;
+        
+        margin-top: 45px;
+    }img{
+        width: 250px;
+    }
+  }
