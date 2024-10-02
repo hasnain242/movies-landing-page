@@ -41,16 +41,16 @@ function displayMovies(movies) {
     moviesContainer.innerHTML = ''; 
     movies.forEach(movie => {
         const movieDiv = document.createElement('div');
-        movieDiv.classList.add('movie');
+        movieDiv.classList.add('bg-black', 'rounded-lg', 'shadow-md' ,'p-4' ,'text-center' ,'text-white');
 
         const posterUrl = movie.poster_path ? `${baseImageUrl}${movie.poster_path}` : 'https://via.placeholder.com/500x750?text=No+Image';
         
         movieDiv.innerHTML = `
-        <a target="_blank" href="details.html?id=${movie.id}">
-            <img src="${posterUrl}" alt="${movie.title}">
-            <h3>${movie.title}</h3>
+        <a target="_blank" href="details.html?id=${movie.id}" class="no-underline text-white">
+            <img src="${posterUrl}" alt="${movie.title}" class="w-full rounded-lg h-[160px] lg:h-[300px]">
+            <h3 class="h-[50px] text-[16px]">${movie.title}</h3>
             </a>
-            <button class="like-btn" id = "44" onclick="likeMovie('${movie.id}', '${movie.poster_path}', '${movie.title}')">Like</button>
+            <button class="text-white border-none px-5 py-2.5 cursor-pointer rounded w-4/5 bg-darkred hover:bg-lightred" id = "44" onclick="likeMovie('${movie.id}', '${movie.poster_path}', '${movie.title}')">Like</button>
             `;
             
         moviesContainer.appendChild(movieDiv);
@@ -64,7 +64,7 @@ function likeMovie(id, poster_path, title) {
     if (!likedMovies.find(movie => movie.id === id)) {
         likedMovies.push({ id, poster_path, title });
         localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
-        // alert('movie liked!')
+        alert('movie liked!')
         displayLikedMovies();
     } 
 }
@@ -75,14 +75,14 @@ function displayLikedMovies() {
     likedMovies = likedMovies.filter(movie => movie.id && movie.poster_path && movie.title); // Filter out invalid entries
     likedMovies.forEach(movie => {
         const movieDiv = document.createElement('div');
-        movieDiv.classList.add('movie');
+        movieDiv.classList.add('bg-black', 'rounded-lg', 'shadow-md' ,'p-4' ,'text-center' ,'text-white');
 
         const posterUrl = movie.poster_path ? `${baseImageUrl}${movie.poster_path}` : 'https://via.placeholder.com/500x750?text=No+Image';
 
         movieDiv.innerHTML = `
-            <img src="${posterUrl}" alt="${movie.title}">
-            <h3>${movie.title}</h3>
-            <button class="like-btn" onclick="removeLike('${movie.id}')">Remove Like</button>
+            <img src="${posterUrl}" alt="${movie.title}" class="w-full rounded-lg h-[300px] ">
+            <h3 class="h-[55px] text-white text-xl">${movie.title}</h3>
+            <button  onclick="removeLike('${movie.id}')" class="text-white border-none px-5 py-2.5 cursor-pointer rounded w-4/5 bg-darkred hover:bg-lightred">Remove Like</button>
         `;
 
         likedMoviesContainer.appendChild(movieDiv);

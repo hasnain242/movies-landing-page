@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Details</title>
-    <link rel="stylesheet" href="details.css">
+    <link rel="stylesheet" href="page.css">
 </head>
-<body>
-    <div id="movie-detail-container">
-        <img id="movie-poster" src="" alt="Movie Poster">
-        <span>
-        <h1 id="movie-title"></h1>
-        <h2>overview:</h2>
-        <p id="movie-overview"></p>
+<body class="box-border p-0 m-[8px] bg-black text-white font-sans">
+    <div id="movie-detail-container" class="block  mt-[45px] items-center sm:flex sm:justify-center md:flex md:justify-center md:p-4 lg:flex lg:justify-center">
+        <img id="movie-poster" src="" alt="Movie Poster" class="w-[315px]">
+        <span class="ml-[40px] w-[550px]">
+        <h1 id="movie-title" class="text-[45px]"></h1>
+        <p class="text-[25px]">Overview:</p>
+        <p id="movie-overview" class="text-justify leading-[1.5] "></p>
         </span>
     </div>
     <script src="./details.js"></script>

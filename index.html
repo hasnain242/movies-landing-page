@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trending Movies</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="output.css">
+    
 </head>
-<body>
-    <header>
+<body class="font-sans bg-black m-0 p-0">
+    <header class="text-red text-center text-3xl p-3">
         <h1>Trending Movies</h1>
-        <input type="text" placeholder="Search Movies..." autocomplete="off" id="inp">
+        <input type="text" placeholder="Search Movies..." autocomplete="off" id="inp" class="p-2 border-0 rounded-lg mt-2 text-base outline-none text-white w-1/2 h-[45px] cursor-pointer bg-gray placeholder-white">
     </header>
     <main>
-        <div id="movies-container">
+        <div id="movies-container" class="grid grid-cols-[repeat(auto-fill,minmax(135px,2fr))] gap-[20px] p-[10px] lg:grid-cols-[repeat(auto-fill,minmax(200px,2fr))]">
         </div>
     </main>
-    <h2>Liked Movies</h2>
-    <div id="liked-movies-container">   
+    <h2 class="pl-[10px] text-white lg:text-2xl">Liked Movies</h2>
+    <div id="liked-movies-container"class="grid grid-cols-[repeat(auto-fill,minmax(135px,2fr))] gap-[20px] p-[10px] lg:grid-cols-[repeat(auto-fill,minmax(200px,2fr))]">   
     </div>
     
     <script src="scripts.js"></script>
